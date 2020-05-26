@@ -128,12 +128,14 @@ if __name__ == "__main__":
 
   model = Model(inputs = MobileNetV2.input, outputs = FC_Head)
       
-  train_generator = trainDataGenerator()
+  print(model.summary())
 
-  validation_generator = validDataGenerator()
+  # train_generator = trainDataGenerator()
 
-  history = trainModel(train_generator, validation_generator)
+  # validation_generator = validDataGenerator()
 
-  print(history.history)
+  # history = trainModel(train_generator, validation_generator)
+
+  # print(history.history.val_accuracy[0])
   
   os.system("python3 counter.py")
