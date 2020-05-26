@@ -92,7 +92,7 @@ def trainModel(train_generator, validation_generator):
   nb_validation_samples = 223
 
       # We only train 5 EPOCHS 
-  epochs = 2
+  epochs = 1
   batch_size = 16
 
   history = model.fit_generator(
@@ -102,6 +102,8 @@ def trainModel(train_generator, validation_generator):
       callbacks = callbacks,
       validation_data = validation_generator,
       validation_steps = nb_validation_samples // batch_size)
+
+  return history
 
 
 
@@ -130,4 +132,8 @@ if __name__ == "__main__":
 
   validation_generator = validDataGenerator()
 
-  trainModel(train_generator, validation_generator)
+  history = trainModel(train_generator, validation_generator)
+
+  print(history.history)
+  
+  os.system("python3 counter.py")
