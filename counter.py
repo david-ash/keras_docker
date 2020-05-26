@@ -1,3 +1,5 @@
+import sys
+
 file = open('variables_file', 'r')
 line = file.readlines()
 
