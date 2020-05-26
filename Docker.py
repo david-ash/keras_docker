@@ -136,8 +136,6 @@ if __name__ == "__main__":
 
   history = trainModel(train_generator, validation_generator)
 
-  print(history.history.val_accuracy[0])
-
   accuracy_validity = int(round(history.history['val_accuracy'][0],4) * 10000)
   
   os.system("python3 counter.py {}".format(accuracy_validity))
