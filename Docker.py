@@ -138,6 +138,6 @@ if __name__ == "__main__":
 
   print(history.history.val_accuracy[0])
 
-  accuracy_validity = int(round(history.history.val_accuracy[0],4) * 10000)
+  accuracy_validity = int(round(history.history['val_accuracy'][0],4) * 10000)
   
   os.system("python3 counter.py {}".format(accuracy_validity))
