@@ -130,12 +130,14 @@ if __name__ == "__main__":
       
   print(model.summary())
 
-  # train_generator = trainDataGenerator()
+  train_generator = trainDataGenerator()
 
-  # validation_generator = validDataGenerator()
+  validation_generator = validDataGenerator()
 
-  # history = trainModel(train_generator, validation_generator)
+  history = trainModel(train_generator, validation_generator)
 
-  # print(history.history.val_accuracy[0])
+  print(history.history.val_accuracy[0])
+
+  accuracy_validity = int(round(history.history.val_accuracy[0],4) * 10000)
   
-  os.system("python3 counter.py")
+  os.system("python3 counter.py {}".format(accuracy_validity))
